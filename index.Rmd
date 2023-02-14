@@ -1,0 +1,79 @@
+---
+output:
+  revealjs::revealjs_presentation:
+    theme: moon
+    transition: none
+    slide_level: 1
+    reveal_options:
+      slideNumber: true
+      fig_caption: false
+      navigation: linear
+---
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(ggplot2)
+```
+
+# https://cscar.research.umich.edu
+
+- Free Consultations
+    - with a GSRA
+        - Self-scheduled or first come first serve, same-day or next day
+    - with a PhD Statistician
+        - Email deskpeople@umich.edu, wait can be anywhere from a few days to a few weeks
+- Email help list
+    - stats-consulting@umich.edu
+- Workshops
+    - https://teachtech.umich.edu
+- Paid work
+
+# When to talk to a statistician?
+
+- As early as possible!
+    - Study design
+    - Power analysis
+    - Does your data allow you to answer your research questions?
+- Carrying out analysis
+    - Suggestions on analysis techniques
+    - Choosing an appropriate software
+    - Detecting issues
+    - Debugging
+- Interpreting results
+
+# Understanding your data
+
+```{r, echo = FALSE, message = FALSE, fig.height = 2.5, fig.width = 3, fig.show="hold"}
+ggplot(diamonds, aes(x = log(price))) + geom_histogram() +
+  theme(axis.title.x = element_blank(), axis.title.y = element_blank())
+ggplot(diamonds, aes(x = price)) + geom_histogram() +
+  theme(axis.title.x = element_blank(), axis.title.y = element_blank())
+```
+
+```{r, echo = FALSE, message = FALSE, fig.height = 2.5, fig.width = 3, fig.show="hold"}
+ggplot(diamonds, aes(x = carat, y = price)) + geom_point() +
+  theme(axis.title.x = element_blank(), axis.title.y = element_blank())
+
+data<-data.frame(Study_ID = c("100", "100", "100", "200", "200", "200", "300",
+                              "300", "300"),
+                 time_point = c("Time1", "Time2", "Time3", "Time1", "Time2",
+                                "Time3", "Time1", "Time2", "Time3"),
+                 value = c(15, 50, 120, 20, 35, 150, 35, 67, 95))
+
+ggplot(data, aes(x = time_point, y = value, group = Study_ID, color = Study_ID)) +
+  geom_point() + geom_line() +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position = "none")
+
+```
+
+# Analysis
+
+- 2 group comparison: t-test
+- Anything beyond that: Regression modeling
+    - Linear regression
+    - Generalized linear regression
+    - Mixed effects regression
+    - Generalized mixed effects regression
+- ANOVA = linear regression
+- GIS help: https://gis.umich.edu

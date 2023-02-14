@@ -1,0 +1,18 @@
+CSCAR Services
+- Consultation
+- Email help list
+- Workshops
+- Paid work
+
+When to talk to a Statisician?
+- As early as possible.
+- Power analysis, study design
+- Does your data allow you to answer your research questions?
+
+Understanding your data
+- Visualizations
+  - Histograms/tables
+  - Scatterplots
+
+Analysis
+-
